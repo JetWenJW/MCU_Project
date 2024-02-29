@@ -1,0 +1,15 @@
+!SESSION 2024-02-29 20:06:54.339 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.5
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_TW
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-02-29 20:07:14.894
+!MESSAGE Recreating part support. No part support available.
+
+!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-02-29 20:07:17.285
+!MESSAGE The device 'MKV31F512xxx12' (version='1.0.0') from SDK 'SDK_2.x_FRDM-KV31F' (version='2.13.0', build='epluginsite616 2023-01-18') will be installed.
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-02-29 20:07:38.089
+!MESSAGE Indexed 'freertos_hello' (30 sources, 61 headers) in 1.57 sec: 7,755 declarations; 26,269 references; 0 unresolved inclusions; 115 syntax errors; 54 unresolved names (0.16%)

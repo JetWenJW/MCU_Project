@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?debugstack-directory version="1.0"?>
+<directory xmlns:xi="http://www.w3.org/2001/XInclude">
+   <xi:include href="file:/C:/nxp/FRDM-KV31F/WorkSpace-11.8.1/FRDM-KV31/LED_Blinky/.mcuxpressoide_packages_support/MKV31F512xxx12_support/KV3x_dir_part.xml"/>
+</directory>

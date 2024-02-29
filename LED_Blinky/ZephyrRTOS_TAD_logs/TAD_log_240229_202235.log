@@ -1,0 +1,11 @@
+"Task Aware Debugger for GDB" version 11.8.1 (202308071233)
+Copyright 2016-2023 NXP
+==================================
+20:21:34.880 INFO: [ZephyrRTOS] .config file could not be read [C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\LED_Blinky\led_blinky\Debug\.config (系統找不到指定的檔案。)]
+20:21:34.880 INFO: [TadModel] DSF session ID 0 has started.
+20:21:40.554 INFO: [TadState] TAD state changed: DEBUG_STARTED -> DEBUG_INIT_0 (SUSPENDED, USER_REQUEST)
+20:21:42.974 INFO: [TadState] TAD state changed: DEBUG_INIT_0 -> DEBUG_INIT_1 (RESUMED, USER_REQUEST)
+20:21:43.33 INFO: [TadState] TAD state changed: DEBUG_INIT_1 -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+20:21:46.794 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+20:22:33.127 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+20:22:35.303 INFO: [TadModel] DSF session ID 0 has ended.

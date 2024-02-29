@@ -1,0 +1,9 @@
+C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\LED_Blinky\led_blinky\drivers/fsl_clock.h:789:20:CLOCK_SetSimSafeDivs	4	static
+C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\LED_Blinky\led_blinky\drivers/fsl_clock.h:1122:20:CLOCK_SetXtal0Freq	16	static
+C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\LED_Blinky\led_blinky\drivers/fsl_smc.h:256:20:SMC_SetPowerModeProtection	16	static
+C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\LED_Blinky\led_blinky\drivers/fsl_smc.h:275:33:SMC_GetPowerModeState	16	static
+../board/clock_config.c:72:13:CLOCK_CONFIG_SetFllExtRefDiv	16	static
+../board/clock_config.c:80:6:BOARD_InitBootClocks	8	static
+../board/clock_config.c:172:6:BOARD_BootClockHSRUN	8	static
+../board/clock_config.c:278:6:BOARD_BootClockVLPR	8	static
+../board/clock_config.c:389:6:BOARD_BootClockRUN	8	static

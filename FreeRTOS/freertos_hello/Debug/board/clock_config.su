@@ -1,0 +1,9 @@
+C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_clock.h:789:20:CLOCK_SetSimSafeDivs	4	static
+C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_clock.h:1122:20:CLOCK_SetXtal0Freq	16	static
+C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_smc.h:256:20:SMC_SetPowerModeProtection	16	static
+C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_smc.h:275:33:SMC_GetPowerModeState	16	static
+../board/clock_config.c:82:13:CLOCK_CONFIG_SetFllExtRefDiv	16	static
+../board/clock_config.c:90:6:BOARD_InitBootClocks	8	static
+../board/clock_config.c:182:6:BOARD_BootClockHSRUN	8	static
+../board/clock_config.c:288:6:BOARD_BootClockVLPR	8	static
+../board/clock_config.c:399:6:BOARD_BootClockRUN	8	static

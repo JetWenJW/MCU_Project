@@ -1,0 +1,48 @@
+!SESSION 2024-02-29 20:17:32.576 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.5
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_TW
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-02-29 20:17:52.205
+!MESSAGE Recreating part support. No part support available.
+
+!ENTRY com.nxp.mcuxpresso.core.datamodels 1 0 2024-02-29 20:17:54.643
+!MESSAGE The device 'MKV31F512xxx12' (version='1.0.0') from SDK 'SDK_2.x_FRDM-KV31F' (version='2.13.0', build='epluginsite616 2023-01-18') will be installed.
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-02-29 20:18:11.603
+!MESSAGE Indexed 'led_blinky' (19 sources, 32 headers) in 1.36 sec: 4,949 declarations; 12,405 references; 8 unresolved inclusions; 38 syntax errors; 1,059 unresolved names (5.8%)
+
+!ENTRY com.crt.log 1 0 2024-02-29 20:21:31.992
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2024-02-29 20:21:31.996
+!MESSAGE RedlinkServer telnet session connected on port 3025->54307 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 4 0 2024-02-29 20:21:34.217
+!MESSAGE Unable to parse ProbeList output to get probe ref count: []
+
+!ENTRY com.crt.utils 1 0 2024-02-29 20:21:42.992
+!MESSAGE Connected to kubernetes.docker.internal on port 10224.
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2024-02-29 20:21:43.001
+!MESSAGE PEMicro continuous memory service session connected on port 10224->54318 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2024-02-29 20:22:52.947
+!MESSAGE Connected to kubernetes.docker.internal on port 10224.
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2024-02-29 20:22:52.950
+!MESSAGE PEMicro continuous memory service session connected on port 10224->54329 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2024-02-29 20:25:48.968
+!MESSAGE Connected to kubernetes.docker.internal on port 10224.
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2024-02-29 20:25:48.972
+!MESSAGE PEMicro continuous memory service session connected on port 10224->54341 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2024-02-29 20:26:31.715
+!MESSAGE Connected to kubernetes.docker.internal on port 10224.
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2024-02-29 20:26:31.719
+!MESSAGE PEMicro continuous memory service session connected on port 10224->54353 @ 127.0.0.1
