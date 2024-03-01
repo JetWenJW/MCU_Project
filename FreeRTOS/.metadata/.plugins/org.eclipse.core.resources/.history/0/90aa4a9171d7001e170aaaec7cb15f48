@@ -26,9 +26,9 @@
 
 /* Task priorities. */
 #define hello_task_PRIORITY 		(configMAX_PRIORITIES - 1)
-#define led_red_task_PRIORITY 		(configMAX_PRIORITIES - 1)
-#define led_blue_task_PRIORITY 		(configMAX_PRIORITIES - 1)
-#define led_green_task_PRIORITY 	(configMAX_PRIORITIES - 1)
+#define led_red_task_PRIORITY 		(configMAX_PRIORITIES - 2)
+#define led_blue_task_PRIORITY 		(configMAX_PRIORITIES - 3)
+#define led_green_task_PRIORITY 	(configMAX_PRIORITIES - 4)
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -96,8 +96,7 @@ static void hello_task(void *pvParameters)
     {
         PRINTF("Hello world.\r\n");
     	//vTaskDelay(pdMS_TO_TICKS(500));
-        taskYIELD();
-        //vTaskSuspend(NULL);
+        vTaskSuspend(NULL);
     }
 }
 
@@ -106,11 +105,9 @@ static void LED_RED(void *pvParameters)
 {
     for (;;)
     {
-    	//vTaskDelay(pdMS_TO_TICKS(1000));
+    	vTaskDelay(pdMS_TO_TICKS(1000));
         GPIO_PortToggle(GPIOD, 1 << 1);		/* LED Red */
     	//vTaskSuspend(NULL);
-        PRINTF("RED.\r\n");
-        taskYIELD();
     }
 }
 
@@ -119,11 +116,9 @@ static void LED_BLUE(void *pvParameters)
 {
     for (;;)
     {
-    	//vTaskDelay(pdMS_TO_TICKS(3000));
+    	vTaskDelay(pdMS_TO_TICKS(3000));
         GPIO_PortToggle(GPIOE, 1 << 25);	/* LED Blue*/
     	//vTaskSuspend(NULL);
-        PRINTF("BLUE.\r\n");
-        taskYIELD();
     }
 }
 
@@ -132,10 +127,8 @@ static void LED_GREEN(void *pvParameters)
 {
     for (;;)
     {
-    	//vTaskDelay(pdMS_TO_TICKS(5000));
+    	vTaskDelay(pdMS_TO_TICKS(5000));
         GPIO_PortToggle(GPIOD, 1 << 7);		/* LED Green */
     	//vTaskSuspend(NULL);
-        PRINTF("GREEN.\r\n");
-        taskYIELD();
     }
 }
