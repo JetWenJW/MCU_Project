@@ -76,8 +76,5 @@ int main(void)
         SysTick_DelayTicks(1000);
         GPIO_PortToggle(GPIOE, 1 << 25);	/* LED Blue*/
 
-        //SysTick_DelayTicks(1000);
-        //GPIO_PortClear(GPIOE, 1 << 25);
-
     }
 }

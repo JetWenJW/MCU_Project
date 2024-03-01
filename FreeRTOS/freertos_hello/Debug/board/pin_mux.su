@@ -1,4 +1,4 @@
 C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_clock.h:602:20:CLOCK_EnableClock	24	static
 C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_port.h:458:20:PORT_SetPinMux	24	static
-../board/pin_mux.c:37:6:BOARD_InitBootPins	8	static
-../board/pin_mux.c:60:6:BOARD_InitPins	8	static
+../board/pin_mux.c:31:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:57:6:BOARD_InitPins	24	static
