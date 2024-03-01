@@ -1,6 +1,0 @@
-"Task Aware Debugger for GDB" version 11.8.1 (202308071233)
-Copyright 2016-2023 NXP
-==================================
-20:33:13.608 INFO: [ZephyrRTOS] .config file could not be read [C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\Debug\.config (系統找不到指定的檔案。)]
-20:33:13.609 INFO: [TadModel] DSF session ID 0 has started.
-20:33:15.337 INFO: [TadModel] DSF session ID 0 has ended.
