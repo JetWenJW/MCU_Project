@@ -5,7 +5,7 @@
  * Generated linker script file for MKV31F512xxx12
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.8.1 [Build 1197] [2023-10-27] on 2024年3月1日 上午9:10:42
+ * MCUXpresso IDE v11.8.1 [Build 1197] [2023-10-27] on 2024年3月1日 下午2:34:39
  */
 
 INCLUDE "freertos_hello_Debug_library.ld"

@@ -11,7 +11,7 @@
 #include "task.h"
 #include "queue.h"
 #include "timers.h"
-
+#include "semphr.h"
 /* Freescale includes. */
 #include "fsl_device_registers.h"
 #include "fsl_debug_console.h"
@@ -23,12 +23,17 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
+SemaphoreHandle_t xMutex;
+
+
+
+
 
 /* Task priorities. */
 #define hello_task_PRIORITY 		(configMAX_PRIORITIES - 1)
-#define led_red_task_PRIORITY 		(configMAX_PRIORITIES - 1)
-#define led_blue_task_PRIORITY 		(configMAX_PRIORITIES - 1)
-#define led_green_task_PRIORITY 	(configMAX_PRIORITIES - 1)
+#define led_red_task_PRIORITY 		(configMAX_PRIORITIES - 2)
+#define led_blue_task_PRIORITY 		(configMAX_PRIORITIES - 3)
+#define led_green_task_PRIORITY 	(configMAX_PRIORITIES - 4)
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -45,6 +50,9 @@ static void LED_GREEN	(void *pvParameters);
  */
 int main(void)
 {
+	xMutex = xSemaphoreCreateMutex();
+
+
     /* Init board hardware. */
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
@@ -94,10 +102,16 @@ static void hello_task(void *pvParameters)
 {
     for (;;)
     {
+    	/* Take Mutex first */
+    	if (xSemaphoreTake(xMutex, portMAX_DELAY) != pdTRUE)
+        {
+    		PRINTF("Failed to take semaphore.\r\n");
+    	}
         PRINTF("Hello world.\r\n");
-    	//vTaskDelay(pdMS_TO_TICKS(500));
-        taskYIELD();
-        //vTaskSuspend(NULL);
+
+        xSemaphoreGive(xMutex);
+        vTaskSuspend(NULL);
+
     }
 }
 
@@ -106,11 +120,19 @@ static void LED_RED(void *pvParameters)
 {
     for (;;)
     {
-    	//vTaskDelay(pdMS_TO_TICKS(1000));
-        GPIO_PortToggle(GPIOD, 1 << 1);		/* LED Red */
-    	//vTaskSuspend(NULL);
-        PRINTF("RED.\r\n");
-        taskYIELD();
+
+    	 if (xSemaphoreTake(xMutex, portMAX_DELAY) != pdTRUE)
+    	 {
+    		 PRINTF("Failed to take semaphore.\r\n");
+         }
+    	vTaskDelay(pdMS_TO_TICKS(1000));
+        GPIO_PortToggle(GPIOD, 1 << 1);		/* LED Red ON */
+
+        vTaskDelay(pdMS_TO_TICKS(1000));
+        GPIO_PortToggle(GPIOD, 1 << 1);		/* LED Red OFF */
+        xSemaphoreGive(xMutex);
+
+        vTaskSuspend(NULL);
     }
 }
 
@@ -119,11 +141,18 @@ static void LED_BLUE(void *pvParameters)
 {
     for (;;)
     {
-    	//vTaskDelay(pdMS_TO_TICKS(3000));
-        GPIO_PortToggle(GPIOE, 1 << 25);	/* LED Blue*/
-    	//vTaskSuspend(NULL);
-        PRINTF("BLUE.\r\n");
-        taskYIELD();
+    	if (xSemaphoreTake(xMutex, portMAX_DELAY) != pdTRUE)
+    	{
+    		PRINTF("Failed to take semaphore.\r\n");
+        }
+    	vTaskDelay(pdMS_TO_TICKS(1000));
+        GPIO_PortToggle(GPIOE, 1 << 25);	/* LED Blue ON */
+
+    	vTaskDelay(pdMS_TO_TICKS(1000));
+        GPIO_PortToggle(GPIOE, 1 << 25);	/* LED Blue OFF */
+        xSemaphoreGive(xMutex);
+
+        vTaskSuspend(NULL);
     }
 }
 
@@ -132,10 +161,17 @@ static void LED_GREEN(void *pvParameters)
 {
     for (;;)
     {
-    	//vTaskDelay(pdMS_TO_TICKS(5000));
+    	if (xSemaphoreTake(xMutex, portMAX_DELAY) != pdTRUE)
+    	{
+    		PRINTF("Failed to take semaphore.\r\n");
+    	}
+    	vTaskDelay(pdMS_TO_TICKS(1000));
         GPIO_PortToggle(GPIOD, 1 << 7);		/* LED Green */
-    	//vTaskSuspend(NULL);
-        PRINTF("GREEN.\r\n");
-        taskYIELD();
+
+    	vTaskDelay(pdMS_TO_TICKS(1000));
+        GPIO_PortToggle(GPIOD, 1 << 7);		/* LED Green */
+        xSemaphoreGive(xMutex);
+
+        vTaskSuspend(NULL);
     }
 }
