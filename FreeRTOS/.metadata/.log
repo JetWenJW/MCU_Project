@@ -465,3 +465,103 @@ Binding(CTRL+INSERT,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.console.ConsoleView,,,system)
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-03-02 16:50:00.190
+!MESSAGE The workspace will exit with unsaved changes in this session.
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-03-02 16:50:00.530
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2024-03-03 00:09:25.777 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.5
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_TW
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-03-03 00:09:30.300
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-03 00:18:13.699
+!MESSAGE Request monitor: 'Sequence "", result for executing step #0 = Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.' resulted in a cancel status: Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate., even though the request is not set to cancel.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-03 00:18:13.699
+!MESSAGE Request monitor: 'Sequence "Initializing debugger services", result for executing step #0 = Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.' resulted in a cancel status: Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate., even though the request is not set to cancel.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-03 00:18:13.699
+!MESSAGE Request monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitorWithProgress@75db7e39): Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.' resulted in a cancel status: Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate., even though the request is not set to cancel.
+
+!ENTRY com.pemicro.debug.gdbjtag.pne 4 5012 2024-03-03 00:18:13.712
+!MESSAGE Error in services launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.
+	at org.eclipse.cdt.dsf.concurrent.Sequence.abortExecution(Sequence.java:599)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleErrorOrWarning(Sequence.java:448)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleFailure(RequestMonitor.java:433)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:393)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+!SUBENTRY 1 com.pemicro.debug.gdbjtag.pne 8 1 2024-03-03 00:18:13.712
+!MESSAGE PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-03 00:18:22.130
+!MESSAGE Request monitor: 'Sequence "", result for executing step #0 = Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.' resulted in a cancel status: Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate., even though the request is not set to cancel.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-03 00:18:22.131
+!MESSAGE Request monitor: 'Sequence "Initializing debugger services", result for executing step #0 = Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.' resulted in a cancel status: Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate., even though the request is not set to cancel.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-03 00:18:22.131
+!MESSAGE Request monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitorWithProgress@7ab80797): Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.' resulted in a cancel status: Status CANCEL: com.pemicro.debug.gdbjtag.pne code=1 PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate., even though the request is not set to cancel.
+
+!ENTRY com.pemicro.debug.gdbjtag.pne 4 5012 2024-03-03 00:18:22.137
+!MESSAGE Error in services launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.
+	at org.eclipse.cdt.dsf.concurrent.Sequence.abortExecution(Sequence.java:599)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleErrorOrWarning(Sequence.java:448)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleFailure(RequestMonitor.java:433)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:393)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+!SUBENTRY 1 com.pemicro.debug.gdbjtag.pne 8 1 2024-03-03 00:18:22.137
+!MESSAGE PEmicro GDB Launch Failure : The GDB Server was not able to establish a connection to the target processor. Please check your connections and power. Verify that the launch settings in the Debug Configuration are accurate.
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-03-03 00:41:29.548
+!MESSAGE 在“Updating on project file change”期间发生了内部错误。
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.cdt.managedbuilder.core.IManagedOptionValueHandler.handleValue(org.eclipse.cdt.managedbuilder.core.IBuildObject, org.eclipse.cdt.managedbuilder.core.IHoldsOptions, org.eclipse.cdt.managedbuilder.core.IOption, String, int)" because the return value of "org.eclipse.cdt.managedbuilder.core.IOption.getValueHandler()" is null
+	at org.eclipse.cdt.managedbuilder.core.ManagedBuildManager.performValueHandlerEvent(ManagedBuildManager.java:3093)
+	at org.eclipse.cdt.managedbuilder.core.ManagedBuildManager.performValueHandlerEvent(ManagedBuildManager.java:3049)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ConfigurationDataProvider.copyCfg(ConfigurationDataProvider.java:303)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ConfigurationDataProvider.createConfiguration(ConfigurationDataProvider.java:278)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.createData(CProjectDescriptionManager.java:1177)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescription.doWritable(CConfigurationDescription.java:188)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescription.updateChild(CProjectDescription.java:509)
+	at org.eclipse.cdt.internal.core.settings.model.CDataProxy.checkUpdate(CDataProxy.java:124)
+	at org.eclipse.cdt.internal.core.settings.model.CDataProxy.getData(CDataProxy.java:75)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescription.getConfigurationData(CConfigurationDescription.java:230)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescription.getConfigurationData(CConfigurationDescription.java:439)
+	at org.eclipse.cdt.managedbuilder.core.ManagedBuildManager.getConfigurationForDescription(ManagedBuildManager.java:3550)
+	at org.eclipse.cdt.managedbuilder.core.ManagedBuildManager.getConfigurationForDescription(ManagedBuildManager.java:3536)
+	at com.nxp.mcuxpresso.core.datamodels.providers.SDKComponentsHandler.getSecureType(SDKComponentsHandler.java:1266)
+	at com.nxp.swtools.mcuxpressoide.adapter.MCUXpressoIDEAdapter.getSecureProjectType(MCUXpressoIDEAdapter.java:445)
+	at com.nxp.swtools.mcuxpressoide.adapter.MCUXpressoIDEAdapter.getSecureProjectType(MCUXpressoIDEAdapter.java:434)
+	at com.nxp.swtools.tee.controller.TeeLinker.updateLinkerMaps(TeeLinker.java:100)
+	at com.nxp.swtools.tee.controller.TeeLinker$1.runAction(TeeLinker.java:60)
+	at com.nxp.swtools.common.utils.runtime.DelayedExecution$1.run(DelayedExecution.java:376)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.crt.utils 1 0 2024-03-03 00:41:36.810
+!MESSAGE Connected to kubernetes.docker.internal on port 10224.
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2024-03-03 00:41:36.822
+!MESSAGE PEMicro continuous memory service session connected on port 10224->60636 @ 127.0.0.1

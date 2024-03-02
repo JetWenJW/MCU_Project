@@ -43,6 +43,7 @@ int main(void)
     xTaskCreate(producerTask, "Producer", 1000, NULL, 1, NULL);
     xTaskCreate(consumerTask, "Consumer", 1000, NULL, 1, NULL);
 
+
     /* Start scheduling. */
     vTaskStartScheduler();
     for (;;)
@@ -56,6 +57,7 @@ void producerTask(void *pvParameters)
     {
         /* Produce Item next color LED ON*/
         ledColor = (ledColor + 1) % 3; /* Color of LED  */
+
         /*Informed Poducer */
         xSemaphoreGive(xSemaphore);/* Semaphore Give */
         vTaskDelay(pdMS_TO_TICKS(1000)); //

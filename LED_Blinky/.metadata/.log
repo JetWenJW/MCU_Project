@@ -46,3 +46,15 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.nxp.mcuxpresso.trace.core 1 0 2024-02-29 20:26:31.719
 !MESSAGE PEMicro continuous memory service session connected on port 10224->54353 @ 127.0.0.1
+!SESSION 2024-03-03 02:15:43.851 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.5
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_TW
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-03 02:16:26.211
+!MESSAGE Indexed 'ecompass_peripheral' (22 sources, 34 headers) in 1.25 sec: 5,676 declarations; 14,151 references; 11 unresolved inclusions; 34 syntax errors; 3,375 unresolved names (15%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-03 02:17:19.469
+!MESSAGE Indexed 'adc16_low_power_peripheral' (23 sources, 40 headers) in 0.534 sec: 5,540 declarations; 15,796 references; 0 unresolved inclusions; 7 syntax errors; 28 unresolved names (0.13%)
