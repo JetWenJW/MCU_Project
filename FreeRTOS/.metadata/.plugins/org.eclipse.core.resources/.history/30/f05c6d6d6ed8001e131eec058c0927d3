@@ -57,7 +57,7 @@ void producerTask(void *pvParameters)
         /* Produce Item next color LED ON*/
         ledColor = (ledColor + 1) % 3; /* Color of LED  */
         /*Informed Poducer */
-        xSemaphoreGive(xSemaphore);/* Semaphore Give */
+        xSemaphoreGive(xSemaphore);
         vTaskDelay(pdMS_TO_TICKS(1000)); //
     }
 }
@@ -66,7 +66,7 @@ void consumerTask(void *pvParameters)
 {
     while(1)
     {
-        if(xSemaphoreTake(xSemaphore, portMAX_DELAY) == pdTRUE)/* Semaphore Take */
+        if(xSemaphoreTake(xSemaphore, portMAX_DELAY) == pdTRUE)
         {
             /* Switch LED Colour */
             switch(ledColor)

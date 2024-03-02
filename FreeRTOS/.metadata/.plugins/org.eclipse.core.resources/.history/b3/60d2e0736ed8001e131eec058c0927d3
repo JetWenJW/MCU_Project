@@ -66,7 +66,7 @@ void consumerTask(void *pvParameters)
 {
     while(1)
     {
-        if(xSemaphoreTake(xSemaphore, portMAX_DELAY) == pdTRUE)/* Semaphore Take */
+        if(xSemaphoreTake(xSemaphore, portMAX_DELAY) == pdTRUE)
         {
             /* Switch LED Colour */
             switch(ledColor)

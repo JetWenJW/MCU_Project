@@ -1,6 +1,4 @@
 C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_gpio.h:387:20:GPIO_PortToggle	16	static
-../source/freertos_hello.c:51:5:main	16	static
-../source/freertos_hello.c:101:13:hello_task	16	static
-../source/freertos_hello.c:119:13:LED_RED	16	static
-../source/freertos_hello.c:140:13:LED_BLUE	16	static
-../source/freertos_hello.c:160:13:LED_GREEN	16	static
+../source/freertos_hello.c:35:5:main	16	static
+../source/freertos_hello.c:53:6:producerTask	16	static
+../source/freertos_hello.c:65:6:consumerTask	16	static
