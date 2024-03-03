@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2015, Freescale Semiconductor, Inc.
+ * Copyright 2016-2017 NXP
+ * All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
 
 /* FreeRTOS includes. */
 #include "FreeRTOS.h"
@@ -17,14 +24,18 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
-SemaphoreHandle_t xSemaphore = NULL;
-volatile int ledColor = 0; // 0: Red, 1: Green, 2: Blue
+
+QueueHandle_t xLedQueue;
 
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
-void consumerTask(void *pvParameters);
-void producerTask(void *pvParameters);
+void ControlTask(void *pvParameters);
+void CyanTask	(void *pvParameters);
+void PurpleTask	(void *pvParameters);
+void YellowTask	(void *pvParameters);
+
+
 
 /*******************************************************************************
  * Code
@@ -39,10 +50,14 @@ int main(void)
     BOARD_InitBootClocks();
     BOARD_InitDebugConsole();
 
-    xSemaphore = xSemaphoreCreateBinary();
-    xTaskCreate(producerTask, "Producer", 1000, NULL, 1, NULL);
-    xTaskCreate(consumerTask, "Consumer", 1000, NULL, 1, NULL);
 
+    xLedQueue = xQueueCreate(10, sizeof(int));
+
+    // 创建任务
+    xTaskCreate(ControlTask, 	"Producer", 	configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    xTaskCreate(YellowTask, 	"RedGreen",		configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    xTaskCreate(PurpleTask, 	"RedBlue", 		configMINIMAL_STACK_SIZE, NULL,	1, NULL);
+    xTaskCreate(CyanTask, 		"GreenBlue", 	configMINIMAL_STACK_SIZE, NULL,	1, NULL);
 
     /* Start scheduling. */
     vTaskStartScheduler();
@@ -51,52 +66,91 @@ int main(void)
 }
 
 
-void producerTask(void *pvParameters)
+void ControlTask(void *pvParameters)
 {
-    while(1)
-    {
-        /* Produce Item next color LED ON*/
-        ledColor = (ledColor + 1) % 3; /* Color of LED  */
+    int ledSignal = 0;
 
-        /*Informed Poducer */
-        xSemaphoreGive(xSemaphore);/* Semaphore Give */
-        vTaskDelay(pdMS_TO_TICKS(1000)); //
+    while (1)
+    {
+        ledSignal = (ledSignal + 1) % 3; // 生成新的LED信号
+        // 向Queue发送信号
+        xQueueSend(xLedQueue, &ledSignal, portMAX_DELAY);
+
+        //vTaskDelay(pdMS_TO_TICKS(3000)); // 模拟生产延时
     }
 }
 
-void consumerTask(void *pvParameters)
+// 新的消费者任务
+void YellowTask(void *pvParameters)
 {
-    while(1)
+    int receivedLedSignal;
+
+    while (1)
     {
-        if(xSemaphoreTake(xSemaphore, portMAX_DELAY) == pdTRUE)/* Semaphore Take */
+        if (xQueueReceive(xLedQueue, &receivedLedSignal, portMAX_DELAY) == pdTRUE)
         {
-            /* Switch LED Colour */
-            switch(ledColor)
+            if (receivedLedSignal == 0) // 如果收到的信号是3，点亮红色和绿色LED
             {
-                case 0:
+                vTaskDelay(pdMS_TO_TICKS(1000));
+                GPIO_PortClear(GPIOD, 1 << 1); // LED Red ON
+                GPIO_PortClear(GPIOD, 1 << 7); // LED Green ON
+                vTaskDelay(pdMS_TO_TICKS(1000));
+                GPIO_PortToggle(GPIOD, 1 << 1); // LED Red OFF
+                GPIO_PortToggle(GPIOD, 1 << 7); // LED Green OFF
 
-                	vTaskDelay(pdMS_TO_TICKS(1000));
-                    GPIO_PortToggle(GPIOD, 1 << 1);		/* LED Red ON */
+                PRINTF("RED_GREEN = Yellow \r\n");
 
-                    vTaskDelay(pdMS_TO_TICKS(1000));
-                    GPIO_PortToggle(GPIOD, 1 << 1);		/* LED Red OFF */
-                    break;
-                case 1:
+            }
+        }
+    }
+}
 
-                	vTaskDelay(pdMS_TO_TICKS(1000));
-                    GPIO_PortToggle(GPIOD, 1 << 7);		/* LED Green */
+void PurpleTask(void *pvParameters)
+{
+    int receivedLedSignal;
 
-                	vTaskDelay(pdMS_TO_TICKS(1000));
-                    GPIO_PortToggle(GPIOD, 1 << 7);		/* LED Green */
-                    break;
-                case 2:
 
-                	vTaskDelay(pdMS_TO_TICKS(1000));
-                    GPIO_PortToggle(GPIOE, 1 << 25);	/* LED Blue ON */
+    while (1)
+    {
+        if (xQueueReceive(xLedQueue, &receivedLedSignal, portMAX_DELAY) == pdTRUE)
+        {
+            if (receivedLedSignal == 1)
+            {
+                vTaskDelay(pdMS_TO_TICKS(1000));
+                GPIO_PortClear(GPIOD, 1 << 1); // LED Red ON
+                GPIO_PortClear(GPIOE, 1 << 25); // LED Green ON
 
-                	vTaskDelay(pdMS_TO_TICKS(1000));
-                    GPIO_PortToggle(GPIOE, 1 << 25);	/* LED Blue OFF */
-                    break;
+
+                vTaskDelay(pdMS_TO_TICKS(1000));
+                GPIO_PortToggle(GPIOD, 1 << 1); // LED Red OFF
+                GPIO_PortToggle(GPIOE, 1 << 25); // LED Green OFF
+                PRINTF("RED_BLUE = Purple\r\n");
+
+            }
+        }
+    }
+}
+
+void CyanTask(void *pvParameters)
+{
+    int receivedLedSignal;
+
+
+    while (1)
+    {
+        if (xQueueReceive(xLedQueue, &receivedLedSignal, portMAX_DELAY) == pdTRUE)
+        {
+            if (receivedLedSignal == 2)
+            {
+                vTaskDelay(pdMS_TO_TICKS(1000));
+                GPIO_PortClear(GPIOE, 1 << 25); // LED Red ON
+                GPIO_PortClear(GPIOD, 1 << 7); // LED Green ON
+
+                vTaskDelay(pdMS_TO_TICKS(1000));
+                GPIO_PortToggle(GPIOE, 1 << 25); // LED Red OFF
+                GPIO_PortToggle(GPIOD, 1 << 7); // LED Green OFF
+                PRINTF("BLUE_GREEN = Cyan\r\n");
+
             }
         }
     }
