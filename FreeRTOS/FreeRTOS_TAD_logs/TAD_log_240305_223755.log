@@ -1,0 +1,42 @@
+"Task Aware Debugger for GDB" version 11.8.1 (202308071233)
+Copyright 2016-2023 NXP
+==================================
+22:05:35.774 INFO: [TadModel] DSF session ID 7 has started.
+22:05:41.27 INFO: [TadState] TAD state changed: DEBUG_STARTED -> DEBUG_INIT_0 (SUSPENDED, USER_REQUEST)
+22:05:43.331 INFO: [TadState] TAD state changed: DEBUG_INIT_0 -> DEBUG_INIT_1 (RESUMED, USER_REQUEST)
+22:05:43.369 INFO: [TadState] TAD state changed: DEBUG_INIT_1 -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+22:05:45.854 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+22:06:12.76 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+22:06:12.100 INFO: [Benchmark] Loading data for "Determine RTOS version" has started.
+22:06:12.197 INFO: [FreeRtosTadModel] Heap type (memory allocation scheme) has been identified from FreeRTOSDebugConfig structure as Heap #4. 
+22:06:12.197 INFO: [FreeRtosTadModel] FreeRTOS version has been identified from FreeRTOSDebugConfig structure as 10.5.0.
+22:06:12.197 INFO: [Benchmark] Loading data for "Determine RTOS version" took 97 ms.
+22:06:12.198 INFO: [Benchmark] Loading data for "Task List" has started.
+22:06:12.997 ERROR: [VariableReader] Could not read variable expression: "ulTotalRunTime".
+22:06:12.997 ERROR: [VariableReader] Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+22:06:12.997 ERROR: [VariableReader] -data-evaluate-expression ulTotalRunTime
+22:06:12.998 ERROR: [VariableReader] Error message from debugger back end:
+22:06:12.998 ERROR: [VariableReader] No symbol "ulTotalRunTime" in current context. java.lang.Exception: No symbol "ulTotalRunTime" in current context.
+22:06:12.998 ERROR: [TaskFactory] ulTotalRunTime not available
+22:06:13.288 ERROR: [VariableReader] Could not read variable expression: "(((struct tskTaskControlBlock *) 0x20000848)->ulRunTimeCounter)".
+22:06:13.289 ERROR: [VariableReader] Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+22:06:13.289 ERROR: [VariableReader] -data-evaluate-expression "(((struct tskTaskControlBlock *) 0x20000848)->ulRunTimeCounter)"
+22:06:13.289 ERROR: [VariableReader] Error message from debugger back end:
+22:06:13.289 ERROR: [VariableReader] There is no member named ulRunTimeCounter. java.lang.Exception: There is no member named ulRunTimeCounter.
+22:06:13.289 INFO: [FreeRTOS] RTOS macro "configGENERATE_RUN_TIME_STATS" is disabled.
+22:06:13.925 INFO: [FreeRTOS] RTOS macro "configUSE_MUTEXES" is disabled.
+22:06:14.675 INFO: [Benchmark] Loading data for "Task List" took 2478 ms.
+22:08:37.367 INFO: [TadState] TAD state changed: READY -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+22:37:53.72 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+22:37:53.73 INFO: [Benchmark] Loading data for "Task List" has started.
+22:37:55.93 ERROR: [VariableReader] Could not read variable expression: "xPendingReadyList.xListEnd.pxNext".
+22:37:55.93 ERROR: [VariableReader] Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Connection is shut down
+22:37:55.93 ERROR: [TaskFactory] Cannot read information from "xPendingReadyList".
+22:37:55.94 ERROR: [VariableReader] Could not read variable expression: "pxDelayedTaskList.uxNumberOfItems".
+22:37:55.94 ERROR: [VariableReader] Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Connection is shut down
+22:37:55.94 ERROR: [TaskFactory] Cannot read information from "pxDelayedTaskList".
+22:37:55.94 ERROR: [VariableReader] Could not read variable expression: "pxOverflowDelayedTaskList.uxNumberOfItems".
+22:37:55.94 ERROR: [VariableReader] Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Connection is shut down
+22:37:55.94 ERROR: [TaskFactory] Cannot read information from "pxOverflowDelayedTaskList".
+22:37:55.94 INFO: [Benchmark] Loading data for "Task List" took 2022 ms.
+22:37:55.99 INFO: [TadModel] DSF session ID 7 has ended.

@@ -1,0 +1,36 @@
+"Task Aware Debugger for GDB" version 11.8.1 (202308071233)
+Copyright 2016-2023 NXP
+==================================
+00:36:03.315 INFO: [TadModel] DSF session ID 1 has started.
+00:36:07.810 INFO: [TadState] TAD state changed: DEBUG_STARTED -> DEBUG_INIT_0 (SUSPENDED, USER_REQUEST)
+00:36:10.482 INFO: [TadState] TAD state changed: DEBUG_INIT_0 -> DEBUG_INIT_1 (RESUMED, USER_REQUEST)
+00:36:10.523 INFO: [TadState] TAD state changed: DEBUG_INIT_1 -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+00:36:12.43 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+00:37:13.229 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+00:37:13.250 INFO: [Benchmark] Loading data for "Determine RTOS version" has started.
+00:37:13.285 INFO: [FreeRtosTadModel] Heap type (memory allocation scheme) has been identified from FreeRTOSDebugConfig structure as Heap #4. 
+00:37:13.285 INFO: [FreeRtosTadModel] FreeRTOS version has been identified from FreeRTOSDebugConfig structure as 10.5.0.
+00:37:13.285 INFO: [Benchmark] Loading data for "Determine RTOS version" took 35 ms.
+00:37:13.285 INFO: [Benchmark] Loading data for "Task List" has started.
+00:37:13.620 ERROR: [VariableReader] Could not read variable expression: "ulTotalRunTime".
+00:37:13.620 ERROR: [VariableReader] Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+00:37:13.620 ERROR: [VariableReader] -data-evaluate-expression ulTotalRunTime
+00:37:13.620 ERROR: [VariableReader] Error message from debugger back end:
+00:37:13.620 ERROR: [VariableReader] No symbol "ulTotalRunTime" in current context. java.lang.Exception: No symbol "ulTotalRunTime" in current context.
+00:37:13.620 ERROR: [TaskFactory] ulTotalRunTime not available
+00:37:15.222 INFO: [TadModel] DSF session ID 1 has ended.
+00:37:17.714 ERROR: [MemoryReader] Read bytes method timed out!
+00:37:17.714 ERROR: [MemoryReader] Could not get memory block! Invalid address "0x00000000" and/or "0x0" length of a block!
+00:37:17.714 ERROR: [TaskFactory] Stack memory block was not read properly, stack has default values.
+00:37:17.714 INFO: [FreeRTOS] RTOS macro "configUSE_TRACE_FACILITY" is disabled.
+00:37:17.714 INFO: [FreeRTOS] RTOS macro "configGENERATE_RUN_TIME_STATS" is disabled.
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "pxReadyTasksLists[0]".
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "pxReadyTasksLists[1]".
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "pxReadyTasksLists[2]".
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "pxReadyTasksLists[3]".
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "pxReadyTasksLists[4]".
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "pxDelayedTaskList".
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "pxOverflowDelayedTaskList".
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "xSuspendedTaskList".
+00:37:17.714 ERROR: [TaskFactory] Cannot read information from "xPendingReadyList".
+00:37:17.715 INFO: [Benchmark] Loading data for "Task List" took 4430 ms.

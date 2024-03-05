@@ -39,7 +39,7 @@ int main(void)
 
     /* Create the software timer. */
     SwTimerHandle = xTimerCreate("SwTimer",          /* Text name. */
-    							 3000, 				 /* Timer period. */
+                                 SW_TIMER_PERIOD_MS, /* Timer period. */
                                  pdTRUE,             /* Enable auto reload. */
                                  0,                  /* ID is not used. */
                                  SwTimerCallback);   /* The callback function. */
