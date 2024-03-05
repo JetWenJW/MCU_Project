@@ -76,7 +76,7 @@ void ControlTask(void *pvParameters)
         // 向Queue发送信号
         xQueueSend(xLedQueue, &ledSignal, portMAX_DELAY);
 
-
+        //vTaskDelay(pdMS_TO_TICKS(3000)); // 模拟生产延时
     }
 }
 

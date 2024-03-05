@@ -116,12 +116,12 @@ void PurpleTask(void *pvParameters)
         {
             if (receivedLedSignal == 1)
             {
-                vTaskDelay(pdMS_TO_TICKS(1000));
+                vTaskDelay(pdMS_TO_TICKS(3000));
                 GPIO_PortClear(GPIOD, 1 << 1); // LED Red ON
                 GPIO_PortClear(GPIOE, 1 << 25); // LED Green ON
 
 
-                vTaskDelay(pdMS_TO_TICKS(1000));
+                vTaskDelay(pdMS_TO_TICKS(3000));
                 GPIO_PortToggle(GPIOD, 1 << 1); // LED Red OFF
                 GPIO_PortToggle(GPIOE, 1 << 25); // LED Green OFF
                 PRINTF("RED_BLUE = Purple\r\n");
@@ -142,11 +142,11 @@ void CyanTask(void *pvParameters)
         {
             if (receivedLedSignal == 2)
             {
-                vTaskDelay(pdMS_TO_TICKS(1000));
+                vTaskDelay(pdMS_TO_TICKS(5000));
                 GPIO_PortClear(GPIOE, 1 << 25); // LED Red ON
                 GPIO_PortClear(GPIOD, 1 << 7); // LED Green ON
 
-                vTaskDelay(pdMS_TO_TICKS(1000));
+                vTaskDelay(pdMS_TO_TICKS(5000));
                 GPIO_PortToggle(GPIOE, 1 << 25); // LED Red OFF
                 GPIO_PortToggle(GPIOD, 1 << 7); // LED Green OFF
                 PRINTF("BLUE_GREEN = Cyan\r\n");
