@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2015, Freescale Semiconductor, Inc.
+ * Copyright 2016-2017 NXP
+ * All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /* FreeRTOS includes. */
 #include "FreeRTOS.h"
 #include "task.h"
@@ -25,6 +33,8 @@ QueueHandle_t xLedQueue;
 void Blinky_Task(void *pvParameters);
 void switch_task(void *pvParameters);
 void Control_task(void *pvParameters);
+
+
 /*******************************************************************************
  * Code
  ******************************************************************************/
@@ -43,7 +53,7 @@ int main(void)
     BOARD_InitDebugConsole();
 
 
-    xLedQueue = xQueueCreate(10, sizeof(int));
+    xLedQueue = xQueueCreate(6, sizeof(int));
 
     xTaskCreate(Blinky_Task, 	"Blinky", 	configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(switch_task, 	"switch", 		configMINIMAL_STACK_SIZE, NULL, 1, NULL);

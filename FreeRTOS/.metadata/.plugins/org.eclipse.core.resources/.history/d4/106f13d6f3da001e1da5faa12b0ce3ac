@@ -43,7 +43,7 @@ int main(void)
     BOARD_InitDebugConsole();
 
 
-    xLedQueue = xQueueCreate(10, sizeof(int));
+    xLedQueue = xQueueCreate(6, sizeof(int));
 
     xTaskCreate(Blinky_Task, 	"Blinky", 	configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(switch_task, 	"switch", 		configMINIMAL_STACK_SIZE, NULL, 1, NULL);
