@@ -759,3 +759,9 @@ Binding(CTRL+INSERT,
 
 !ENTRY com.nxp.mcuxpresso.trace.core 1 0 2024-03-05 21:25:48.971
 !MESSAGE PEMicro continuous memory service session connected on port 10224->61701 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2024-03-05 22:05:43.328
+!MESSAGE Connected to kubernetes.docker.internal on port 10224.
+
+!ENTRY com.nxp.mcuxpresso.trace.core 1 0 2024-03-05 22:05:43.336
+!MESSAGE PEMicro continuous memory service session connected on port 10224->61873 @ 127.0.0.1

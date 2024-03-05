@@ -22,9 +22,9 @@ QueueHandle_t xLedQueue;
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
-void Blinky_Task	(void *pvParameters);
-void switch_task	(void *pvParameters);
-void Control_task	(void *pvParameters);
+void Blinky_Task(void *pvParameters);
+void switch_task(void *pvParameters);
+void Control_task(void *pvParameters);
 /*******************************************************************************
  * Code
  ******************************************************************************/
@@ -45,7 +45,7 @@ int main(void)
 
     xLedQueue = xQueueCreate(10, sizeof(int));
 
-    xTaskCreate(Blinky_Task, 	"Blinky", 		configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    xTaskCreate(Blinky_Task, 	"Blinky", 	configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(switch_task, 	"switch", 		configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(Control_task, 	"Control", 		configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
@@ -64,8 +64,6 @@ void Blinky_Task(void *pvParameters)
     {
     	ledSignal = (ledSignal + 1) % 3;
         xQueueSend(xLedQueue, &ledSignal, portMAX_DELAY);
-        taskYIELD();
-
     }
 }
 
@@ -78,8 +76,6 @@ void Control_task(void *pvParameters)
 
     	ledSignal = (ledSignal + 3) % 6;
         xQueueSend(xLedQueue, &ledSignal, portMAX_DELAY);
-        taskYIELD();
-
     }
 }
 

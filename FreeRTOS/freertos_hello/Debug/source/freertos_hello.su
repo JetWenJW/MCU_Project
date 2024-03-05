@@ -2,5 +2,5 @@ C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl
 C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_gpio.h:387:20:GPIO_PortToggle	16	static
 ../source/freertos_hello.c:38:5:main	16	static
 ../source/freertos_hello.c:60:6:Blinky_Task	16	static
-../source/freertos_hello.c:71:6:Control_task	16	static
-../source/freertos_hello.c:83:6:switch_task	24	static
+../source/freertos_hello.c:73:6:Control_task	16	static
+../source/freertos_hello.c:87:6:switch_task	24	static
