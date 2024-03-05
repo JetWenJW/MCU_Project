@@ -1,4 +1,4 @@
 C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers/fsl_gpio.h:387:20:GPIO_PortToggle	16	static
-../source/freertos_hello.c:29:5:main	24	static
-../source/freertos_hello.c:55:6:white_task	16	static
-../source/freertos_hello.c:75:6:SwTimerCallback	16	static
+../source/freertos_hello.c:28:5:main	24	static
+../source/freertos_hello.c:51:6:white_task	16	static
+../source/freertos_hello.c:67:6:SwTimerCallback	16	static

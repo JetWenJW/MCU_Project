@@ -1,11 +1,11 @@
-00:37:23 **** Incremental Build of configuration Debug for project freertos_hello ****
+00:58:34 **** Incremental Build of configuration Debug for project freertos_hello ****
 make -r -j12 all 
 make[1]: Nothing to be done for 'main-build'.
 Performing post-build steps
 arm-none-eabi-size "freertos_hello.axf"; # arm-none-eabi-objcopy -v -O binary "freertos_hello.axf" "freertos_hello.bin" ; # checksum -p MKV31F512xxx12 -d "freertos_hello.bin";
    text	   data	    bss	    dec	    hex	filename
-  22640	     20	  19104	  41764	   a324	freertos_hello.axf
+  22616	     20	  19104	  41740	   a30c	freertos_hello.axf
  
 
-00:37:24 Build Finished. 0 errors, 0 warnings. (took 187ms)
+00:58:35 Build Finished. 0 errors, 0 warnings. (took 185ms)
 

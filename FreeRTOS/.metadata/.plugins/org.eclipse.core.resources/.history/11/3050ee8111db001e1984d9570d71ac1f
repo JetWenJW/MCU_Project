@@ -42,6 +42,7 @@ int main(void)
                                  SwTimerCallback);   /* The callback function. */
     /* Start timer. */
     xTimerStart(SwTimerHandle, 0);
+
     xTaskCreate(white_task, 	"white", 	configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     /* Start scheduling */
     vTaskStartScheduler();

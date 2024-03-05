@@ -15,7 +15,8 @@
  * Definitions
  ******************************************************************************/
 #define SW_TIMER_PERIOD_MS (3000 / portTICK_PERIOD_MS)
-
+//SemaphoreHandle_t xSemaphore = NULL;
+int ledSignal = 0;
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -34,14 +35,17 @@ int main(void)
     BOARD_InitBootClocks();
     BOARD_InitDebugConsole();
 
+    /* Create a binary semaphore. */
+
     /* Create the software timer. */
     SwTimerHandle = xTimerCreate("SwTimer",          /* Text name. */
-    							 SW_TIMER_PERIOD_MS, /* Timer period. */
+    							 3000, 				 /* Timer period. */
                                  pdTRUE,             /* Enable auto reload. */
                                  0,                  /* ID is not used. */
                                  SwTimerCallback);   /* The callback function. */
     /* Start timer. */
     xTimerStart(SwTimerHandle, 0);
+
     xTaskCreate(white_task, 	"white", 	configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     /* Start scheduling */
     vTaskStartScheduler();
@@ -56,6 +60,7 @@ void white_task (void *pvParameters)
         GPIO_PortToggle(GPIOE, 1 << 25); // LED Blue ON
         GPIO_PortToggle(GPIOD, 1 << 7); // LED Green ON
         GPIO_PortToggle(GPIOD, 1 << 1);  /* LED Red ON */
+
         vTaskDelay(pdMS_TO_TICKS(1000));
         PRINTF("R + G + B = white \r\n");
     }
