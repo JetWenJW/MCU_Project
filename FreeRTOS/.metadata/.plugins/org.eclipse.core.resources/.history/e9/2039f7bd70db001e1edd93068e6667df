@@ -96,7 +96,6 @@ void consumerTask(void *pvParameters)
 
                 	vTaskDelay(pdMS_TO_TICKS(1000));
                     GPIO_PortToggle(GPIOE, 1 << 25);	/* LED Blue OFF */
-                    PRINTF("BLUE\r\n");
                     break;
             }
         }

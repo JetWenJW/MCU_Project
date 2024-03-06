@@ -1,24 +1,11 @@
-16:24:58 **** Incremental Build of configuration Debug for project freertos_hello ****
+12:30:06 **** Incremental Build of configuration Debug for project freertos_hello ****
 make -r -j12 all 
-Building file: ../source/freertos_hello.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -std=gnu99 -D__REDLIB__ -DCPU_MKV31F512VLL12 -DCPU_MKV31F512VLL12_cm4 -DFRDM_KV31F -DFREEDOM -DSERIAL_PORT_TYPE_UART=1 -DSDK_OS_FREE_RTOS -DMCUXPRESSO_SDK -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\source" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\drivers" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\device" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\utilities" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\component\uart" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\component\serial_manager" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\component\lists" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\CMSIS" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\freertos\freertos-kernel\include" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\freertos\freertos-kernel\portable\GCC\ARM_CM4F" -I"C:\nxp\FRDM-KV31F\WorkSpace-11.8.1\FRDM-KV31\FreeRTOS\freertos_hello\board" -O0 -fno-common -g3 -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fmerge-constants -fmacro-prefix-map="../source/"= -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/freertos_hello.d" -MT"source/freertos_hello.o" -MT"source/freertos_hello.d" -o "source/freertos_hello.o" "../source/freertos_hello.c"
-Finished building: ../source/freertos_hello.c
- 
-Building target: freertos_hello.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -Xlinker -Map="freertos_hello.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T freertos_hello_Debug.ld -o "freertos_hello.axf" ./utilities/fsl_assert.o ./utilities/fsl_debug_console.o ./utilities/fsl_str.o  ./startup/startup_mkv31f51212.o  ./source/freertos_hello.o ./source/semihost_hardfault.o  ./freertos/freertos-kernel/portable/MemMang/heap_4.o  ./freertos/freertos-kernel/portable/GCC/ARM_CM4F/port.o  ./freertos/freertos-kernel/croutine.o ./freertos/freertos-kernel/event_groups.o ./freertos/freertos-kernel/list.o ./freertos/freertos-kernel/queue.o ./freertos/freertos-kernel/stream_buffer.o ./freertos/freertos-kernel/tasks.o ./freertos/freertos-kernel/timers.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_common_arm.o ./drivers/fsl_gpio.o ./drivers/fsl_lpuart.o ./drivers/fsl_smc.o ./drivers/fsl_uart.o  ./device/system_MKV31F51212.o  ./component/uart/fsl_adapter_uart.o  ./component/serial_manager/fsl_component_serial_manager.o ./component/serial_manager/fsl_component_serial_port_uart.o  ./component/lists/fsl_component_generic_list.o  ./board/board.o ./board/clock_config.o ./board/pin_mux.o   
-Memory region         Used Size  Region Size  %age Used
-   PROGRAM_FLASH:       23236 B       512 KB      4.43%
-      SRAM_UPPER:       19132 B        64 KB     29.19%
-      SRAM_LOWER:          0 GB        32 KB      0.00%
-Finished building target: freertos_hello.axf
- 
+make[1]: Nothing to be done for 'main-build'.
 Performing post-build steps
 arm-none-eabi-size "freertos_hello.axf"; # arm-none-eabi-objcopy -v -O binary "freertos_hello.axf" "freertos_hello.bin" ; # checksum -p MKV31F512xxx12 -d "freertos_hello.bin";
    text	   data	    bss	    dec	    hex	filename
-  23216	     20	  19112	  42348	   a56c	freertos_hello.axf
+  23268	     20	  19112	  42400	   a5a0	freertos_hello.axf
  
 
-16:24:59 Build Finished. 0 errors, 0 warnings. (took 494ms)
+12:30:06 Build Finished. 0 errors, 0 warnings. (took 187ms)
 
